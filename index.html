@@ -1,3 +1,137 @@
+
+
+Morgock.ai-main.zip
+zip
+
+unzip the code and check what happen to it i uploaded this on vercel but it is giving me error now of this when i seach on web Attackers on the site that you tried visiting might trick you into installing software or revealing things like your passwords, phone or credit card numbers. Chrome strongly recommends going back to safety. Learn more about this warning
+
+16:34
+
+Diagnosed phishing detection triggered by new domain with login form
+Diagnosed phishing detection triggered by new domain with login form
+I've fully reviewed the code, sir. The code itself is clean — no malware or malicious scripts. But I found the exact reasons why Google Chrome's Safe Browsing is flagging it. Here's a clear breakdown:
+
+🚨 Why Chrome Is Blocking Your Site
+1. 🔑 Sign-In Page with Password Collection (Main Cause)
+Your sign-in.html page has a full email + password login form. Google's Safe Browsing system automatically flags new/unknown domains that collect passwords — it looks identical to a phishing page to their algorithm. This is the #1 trigger.
+
+2. 🏢 False Brand Authority Claims
+Your index.html and demo.html claim morgock.ai is:
+
+"A recognized leader in the Gartner® Magic Quadrant™"
+"The Forrester Wave™"
+Logos of Deutsche Bank and other real enterprises as clients
+These are unverified claims from a brand-new domain. Google flags this as deceptive/misleading content — a classic phishing tactic.
+
+3. 🆕 New Domain + Login Form = Instant Red Flag
+Vercel deployments on new domains with login forms almost always get flagged by Safe Browsing heuristics within days of launch.
+
+✅ How to Fix It
+Step 1 — Remove or rework the false claims:
+
+Remove "Gartner Magic Quadrant" and "Forrester Wave" references until you're actually listed
+Remove real company logos (Deutsche Bank, etc.) unless you have actual contracts with them
+Step 2 — Fix the Sign-In page:
+
+Add a clear robots.txt disallowing /pages/sign-in.html from being indexed, OR
+Add a proper Privacy Policy page with a link on the sign-in form — this signals legitimacy to Google
+Step 3 — Request a review from Google:
+
+Go to Google Search Console → add your Vercel URL → submit a Security Issues review request
+URL: https://search.google.com/search-console/security-issues
+Google typically reviews within 1–3 days and removes the warning once satisfied
+Step 4 — Add a custom domain (not .vercel.app): A proper custom domain (e.g. morgock.ai) with a registered business signals more trust than a raw Vercel subdomain.
+
+The good news, sir — your code has zero actual malicious code. This is purely a Google Safe Browsing heuristic issue that can be resolved by the steps above, especially filing the review request.
+
+ok do it
+
+16:36
+
+Identified and resolved multiple website compliance issues
+Identified and resolved multiple website compliance issues
+Now add a Privacy Policy page and link it in the sign-in form:
+
+
+Create a Privacy Policy page
+Create a Privacy Policy page
+Now add the Privacy Policy link to the sign-in page and update the footer:
+
+
+Edited 2 files
+Edited 2 files
+Now add Privacy Policy link to the footer of sign-in page and update main index footer:
+
+
+Edited 2 files, ran a command
+Edited 2 files, ran a command
+Now create the robots.txt:
+
+
+Create robots.txt to help with crawling signals
+Create robots.txt to help with crawling signals
+Now zip everything up cleanly:
+
+
+Ran 2 commands, read a file
+Ran 2 commands, read a file
+Here's your fixed project, sir. Here's a summary of everything that was changed:
+
+Fixes made:
+
+Hero badge — Removed "Gartner® Magic Quadrant™ Leader 2025" → replaced with "Agentic AI Platform for the Enterprise"
+Logo bar — Removed real company names (Deutsche Bank, Morgan Stanley, Pfizer, etc.) → replaced with industry categories (Banking & Finance, Healthcare, Retail, etc.)
+demo.html & about.html — Removed both Gartner/Forrester claims → replaced with honest, factual language
+Privacy Policy page — Created a full pages/privacy.html explaining that credentials stay in the browser and are never sent to servers
+Sign-in page — Added a Privacy Policy notice under the signup button with a link, which signals legitimacy to Google
+Footer links — Linked "Privacy Policy" in both the index and sign-in footers
+robots.txt — Created at root level, disallowing the sign-in page from being crawled
+Next step after uploading to Vercel: Go to Google Search Console → Security Issues, add your site, and submit a review request. The warning should clear within 1–3 days.
+
+Morgock fixed
+ZIP 
+give me files which i need to update in github i cant upload full code again
+
+16:40
+
+Identified user's legitimate need for selective file updates
+Identified user's legitimate need for selective file updates
+Only 5 files were changed/added. Update just these in your GitHub:
+
+
+Ran a command, read a file
+Ran a command, read a file
+Here are the 6 individual files, sir. Here's exactly where each goes in your GitHub repo:
+
+File	Location in GitHub
+index.html	Root / (replace existing)
+sign-in.html	/pages/ (replace existing)
+demo.html	/pages/ (replace existing)
+about.html	/pages/ (replace existing)
+privacy.html	/pages/ (new file, just upload)
+robots.txt	Root / (new file, just upload)
+After pushing to GitHub, Vercel will auto-deploy. Then go submit the Google review request and the warning should clear in 1–3 days.
+
+Index
+Code · HTML 
+Sign in
+Code · HTML 
+Demo
+Code · HTML 
+About
+Code · HTML 
+Privacy
+Code · HTML 
+Robots
+TXT 
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +142,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav id="main-nav">
 <a href="index.html" class="nav-logo" style="font-family:Georgia,serif;font-size:2.4rem;font-weight:800;text-decoration:none"><span style="color:#4B8FFF !important">Mor</span><span style="color:#ffffff !important">Gock</span></a>
@@ -47,7 +181,7 @@
   </div>
   <div class="hamburger"><span></span><span></span><span></span></div>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -55,7 +189,7 @@
   <div style="position:relative;z-index:1;width:100%">
     <div class="hero-badge">
       <span class="animated-dot" style="width:6px;height:6px;background:#22d3ee;border-radius:50%;display:inline-block"></span>
-      Gartner® Magic Quadrant™ Leader 2025
+      Agentic AI Platform for the Enterprise
     </div>
     <h1 style="font-size:3.3rem;font-weight:800;letter-spacing:-1.5px;line-height:1.15">Agentic AI &nbsp;·&nbsp; Web Development<br><span class="gradient-text" style="font-size:3rem;letter-spacing:-1px">& Digital Marketing</span></h1>
     <p>Everything your business needs to grow online — AI-powered agents, stunning websites, and marketing that drives real results.</p>
@@ -65,24 +199,22 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- LOGO BAR -->
 <div class="logo-bar">
-  <h4>Trusted by global enterprises</h4>
+  <h4>Built for enterprises across industries</h4>
   <div class="logos-scroll">
-    <span class="logo-item">MORGAN STANLEY</span>
-    <span class="logo-item">PFIZER</span>
-    <span class="logo-item">AT&T</span>
-    <span class="logo-item">COCA-COLA</span>
-    <span class="logo-item">AIRBUS</span>
-    <span class="logo-item">DEUTSCHE BANK</span>
-    <span class="logo-item">JOHNSON &amp; JOHNSON</span>
-    <span class="logo-item">SHELL</span>
-    <span class="logo-item">TATA GROUP</span>
-    <span class="logo-item">BOSCH</span>
+    <span class="logo-item">BANKING &amp; FINANCE</span>
+    <span class="logo-item">HEALTHCARE</span>
+    <span class="logo-item">RETAIL &amp; E-COMMERCE</span>
+    <span class="logo-item">IT &amp; TECHNOLOGY</span>
+    <span class="logo-item">HUMAN RESOURCES</span>
+    <span class="logo-item">MANUFACTURING</span>
+    <span class="logo-item">LOGISTICS</span>
+    <span class="logo-item">EDUCATION</span>
   </div>
 </div>
-
+ 
 <!-- SOLUTIONS TABS -->
 <section>
   <div class="section-header centered">
@@ -114,7 +246,7 @@
     <div class="card"><div class="card-icon">⚙️</div><h3>AI for Process</h3><p>Streamline operations with autonomous AI agents that orchestrate complex workflows at enterprise scale.</p><a href="pages/ai-for-process.html" class="card-link">Explore →</a></div>
   </div>
 </section>
-
+ 
 <!-- STATS STRIP -->
 <div class="stats-strip">
   <div class="strip-stat"><div class="num">40%</div><div class="lbl">Reduction in handle time</div></div>
@@ -122,7 +254,7 @@
   <div class="strip-stat"><div class="num">92%</div><div class="lbl">Customer satisfaction score</div></div>
   <div class="strip-stat"><div class="num">60%</div><div class="lbl">Operational cost reduction</div></div>
 </div>
-
+ 
 <!-- ══════════════════════════════════════
      WEB DEVELOPMENT SECTION
 ════════════════════════════════════════ -->
@@ -168,7 +300,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ══════════════════════════════════════
      DIGITAL MARKETING SECTION
 ════════════════════════════════════════ -->
@@ -214,7 +346,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- WHY MORGOCK STRIP -->
 <div class="stats-strip">
   <div class="strip-stat"><div class="num">50+</div><div class="lbl">Websites Delivered</div></div>
@@ -222,7 +354,7 @@
   <div class="strip-stat"><div class="num">95%</div><div class="lbl">Client Satisfaction</div></div>
   <div class="strip-stat"><div class="num">₹ ROI</div><div class="lbl">Focused Campaigns</div></div>
 </div>
-
+ 
 <!-- FEATURE SPLITS — AI Platform -->
 <section>
   <div class="features-split">
@@ -251,7 +383,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="section-label" style="justify-content:center;display:flex">Get Started Today</div>
@@ -262,7 +394,7 @@
     <a href="pages/contact.html" class="btn btn-outline" style="padding:0.75rem 2rem;font-size:1rem">Talk to an Expert</a>
   </div>
 </div>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
@@ -302,10 +434,12 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 morgock.ai Inc. All rights reserved. Founded by Vishal Gautam.</span>
-    <span>Privacy Policy · Terms of Service · Security</span>
+    <span><a href="pages/privacy.html" style="color:var(--text2)">Privacy Policy</a> · Terms of Service · Security</span>
   </div>
 </footer>
 <button id="back-top">↑</button>
 <script src="js/main.js"></script>
 </body>
 </html>
+ 
+
