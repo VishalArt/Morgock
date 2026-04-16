@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pages/sign-in.html
+
+Sitemap: https://morgock.ai/sitemap.xml

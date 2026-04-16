@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
+  <circle cx="22" cy="22" r="20" fill="none" stroke="#4B8FFF" stroke-width="2.5"/>
+  <circle cx="22" cy="22" r="14" fill="none" stroke="#4B8FFF" stroke-width="1.2"/>
+  <circle cx="22" cy="22" r="3.5" fill="#4B8FFF"/>
+  <g stroke="#4B8FFF" stroke-width="0.9" stroke-linecap="round">
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(0   22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(15  22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(30  22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(45  22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(60  22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(75  22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(90  22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(105 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(120 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(135 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(150 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(165 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(180 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(195 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(210 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(225 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(240 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(255 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(270 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(285 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(300 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(315 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(330 22 22)"/>
+    <line x1="22" y1="22" x2="22" y2="2" transform="rotate(345 22 22)"/>
+  </g>
+  <g fill="#4B8FFF">
+    <circle cx="22" cy="8" r="1.4" transform="rotate(0   22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(15  22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(30  22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(45  22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(60  22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(75  22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(90  22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(105 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(120 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(135 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(150 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(165 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(180 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(195 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(210 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(225 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(240 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(255 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(270 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(285 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(300 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(315 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(330 22 22)"/>
+    <circle cx="22" cy="8" r="1.4" transform="rotate(345 22 22)"/>
+  </g>
+</svg>

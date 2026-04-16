@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internships — MorGock.ai</title>
+  <meta name="description" content="Join MorGock.ai as an intern. Learn, build and grow with us across AI, web development, marketing and more." />
+  <meta name="author" content="Vishal Gautam, MorGock.ai" />
+  <meta property="og:site_name" content="MorGock.ai" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .intern-card {
+      background: #0d1526;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .intern-card:hover { border-color: rgba(59,130,246,0.45); transform: translateY(-3px); }
+    .intern-dept {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 2px; color: #3b82f6;
+      font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .intern-card h3 { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; }
+    .intern-card p { font-size:0.875rem; color:#94a3b8; margin-bottom:1rem; line-height:1.6; }
+    .intern-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.25rem; }
+    .tag {
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 100px; padding: 0.2rem 0.7rem;
+      font-size: 0.72rem; color: #93c5fd;
+    }
+    .intern-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .perks-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+    .perk-card {
+      background:#0d1526; border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px; padding:1.5rem; text-align:center;
+    }
+    .perk-icon { font-size:2rem; margin-bottom:0.75rem; }
+    .perk-card h4 { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:700; margin-bottom:0.35rem; }
+    .perk-card p { font-size:0.82rem; color:#94a3b8; }
+    .apply-form { background:#0d1526; border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:2.5rem; max-width:640px; }
+    .step-badge {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:32px; height:32px; border-radius:50%;
+      background: linear-gradient(135deg,#3b82f6,#6366f1);
+      color:#fff; font-weight:800; font-size:0.85rem; flex-shrink:0;
+    }
+    .step-row { display:flex; gap:1rem; align-items:flex-start; margin-bottom:1.5rem; }
+    .step-text h4 { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:700; margin-bottom:0.2rem; }
+    .step-text p { font-size:0.85rem; color:#94a3b8; }
+    @media(max-width:768px){
+      .intern-grid { grid-template-columns:1fr; }
+      .perks-grid { grid-template-columns:1fr 1fr; }
+      .apply-form { padding:1.5rem; }
+    }
+    @media(max-width:480px){
+      .perks-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <span style="color:#4B8FFF !important">Mor</span><span style="color:#ffffff !important">Gock</span>
+  </a>
+  <ul class="nav-links">
+    <li class="dropdown"><a href="#">Solutions ▾</a>
+      <div class="dropdown-menu">
+        <a href="ai-for-banking.html">AI for Banking</a>
+        <a href="ai-for-healthcare.html">AI for Healthcare</a>
+        <a href="ai-for-retail.html">AI for Retail</a>
+        <a href="ai-for-it.html">AI for IT</a>
+        <a href="ai-for-hr.html">AI for HR</a>
+      </div>
+    </li>
+    <li class="dropdown"><a href="#">Platform ▾</a>
+      <div class="dropdown-menu">
+        <a href="platform.html">Agent Platform</a>
+        <a href="ai-for-work.html">AI for Work</a>
+        <a href="ai-for-service.html">AI for Service</a>
+        <a href="ai-for-process.html">AI for Process</a>
+      </div>
+    </li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="sign-in.html" class="btn btn-ghost">Sign In</a>
+    <a href="demo.html" class="btn btn-primary">Request Demo</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="section-label">Internships at MorGock.ai</div>
+  <h1>Start Your Career<br><span class="gradient-text">With Real Work</span></h1>
+  <p>No coffee runs. No busy work. At MorGock.ai, interns work on real projects, ship real code, and make a real impact from day one.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+    <a href="#open-roles" class="btn btn-primary" style="padding:0.75rem 2rem;font-size:1rem">See Open Roles</a>
+    <a href="#apply" class="btn btn-outline" style="padding:0.75rem 2rem;font-size:1rem">Apply Now</a>
+  </div>
+</div>
+
+<!-- PERKS -->
+<section>
+  <div class="section-header centered">
+    <div class="section-label">Why Intern With Us</div>
+    <h2 class="section-title">More than just an internship</h2>
+  </div>
+  <div class="perks-grid">
+    <div class="perk-card"><div class="perk-icon">💻</div><h4>Real Projects</h4><p>Work on live features that real users interact with every day.</p></div>
+    <div class="perk-card"><div class="perk-icon">🧑‍멘토</div><h4>1-on-1 Mentorship</h4><p>Get personal guidance from experienced professionals in your field.</p></div>
+    <div class="perk-card"><div class="perk-icon">📜</div><h4>Certificate</h4><p>Receive an official internship certificate and LinkedIn recommendation.</p></div>
+    <div class="perk-card"><div class="perk-icon">💰</div><h4>Paid Internship</h4><p>Competitive stipend based on your role and performance.</p></div>
+    <div class="perk-card"><div class="perk-icon">🚀</div><h4>Fast Learning</h4><p>Learn more in 3 months here than in a year elsewhere.</p></div>
+    <div class="perk-card"><div class="perk-icon">🤝</div><h4>PPO Opportunity</h4><p>Top performers get a Pre-Placement Offer to join full-time.</p></div>
+  </div>
+</section>
+
+<!-- OPEN INTERN ROLES -->
+<section id="open-roles" style="padding-top:0">
+  <div class="section-header">
+    <div class="section-label">Open Internship Roles</div>
+    <h2 class="section-title">Find your fit</h2>
+    <p style="color:#94a3b8;font-size:0.95rem;margin-top:0.5rem">Duration: 2–6 months &nbsp;·&nbsp; Mode: Remote / Hybrid &nbsp;·&nbsp; Stipend: Paid</p>
+  </div>
+  <div class="intern-grid">
+
+    <div class="intern-card">
+      <div class="intern-dept">Engineering</div>
+      <h3>Frontend Developer Intern</h3>
+      <p>Build and improve UI components for our web platform using HTML, CSS and JavaScript.</p>
+      <div class="intern-tags">
+        <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">React</span>
+      </div>
+      <a href="#apply" class="btn btn-primary" style="width:100%;justify-content:center">Apply Now</a>
+    </div>
+
+    <div class="intern-card">
+      <div class="intern-dept">Engineering</div>
+      <h3>Backend Developer Intern</h3>
+      <p>Work on APIs, databases and server-side logic that powers our AI platform.</p>
+      <div class="intern-tags">
+        <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">MongoDB</span>
+      </div>
+      <a href="#apply" class="btn btn-primary" style="width:100%;justify-content:center">Apply Now</a>
+    </div>
+
+    <div class="intern-card">
+      <div class="intern-dept">AI / ML</div>
+      <h3>AI/ML Research Intern</h3>
+      <p>Explore and implement machine learning models and help build our AI agent capabilities.</p>
+      <div class="intern-tags">
+        <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">LLMs</span>
+      </div>
+      <a href="#apply" class="btn btn-primary" style="width:100%;justify-content:center">Apply Now</a>
+    </div>
+
+    <div class="intern-card">
+      <div class="intern-dept">Digital Marketing</div>
+      <h3>Digital Marketing Intern</h3>
+      <p>Run social media campaigns, write content, and help grow our online presence across platforms.</p>
+      <div class="intern-tags">
+        <span class="tag">SEO</span><span class="tag">Social Media</span><span class="tag">Content</span>
+      </div>
+      <a href="#apply" class="btn btn-primary" style="width:100%;justify-content:center">Apply Now</a>
+    </div>
+
+    <div class="intern-card">
+      <div class="intern-dept">Design</div>
+      <h3>UI/UX Design Intern</h3>
+      <p>Design clean, user-friendly interfaces and help shape the look and feel of our products.</p>
+      <div class="intern-tags">
+        <span class="tag">Figma</span><span class="tag">UI Design</span><span class="tag">Prototyping</span>
+      </div>
+      <a href="#apply" class="btn btn-primary" style="width:100%;justify-content:center">Apply Now</a>
+    </div>
+
+    <div class="intern-card">
+      <div class="intern-dept">Business</div>
+      <h3>Business Development Intern</h3>
+      <p>Help identify new clients, support sales outreach and learn how a growing AI company scales.</p>
+      <div class="intern-tags">
+        <span class="tag">Sales</span><span class="tag">Communication</span><span class="tag">Research</span>
+      </div>
+      <a href="#apply" class="btn btn-primary" style="width:100%;justify-content:center">Apply Now</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW TO APPLY -->
+<section style="padding-top:0">
+  <div class="section-header centered">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">How it works</h2>
+  </div>
+  <div style="max-width:560px;margin:0 auto">
+    <div class="step-row"><div class="step-badge">1</div><div class="step-text"><h4>Apply Online</h4><p>Fill the form below with your details and the role you want.</p></div></div>
+    <div class="step-row"><div class="step-badge">2</div><div class="step-text"><h4>Quick Interview</h4><p>A short 20-minute call with our team to understand your goals.</p></div></div>
+    <div class="step-row"><div class="step-badge">3</div><div class="step-text"><h4>Small Task</h4><p>A simple take-home task relevant to your role. No trick questions.</p></div></div>
+    <div class="step-row"><div class="step-badge">4</div><div class="step-text"><h4>Offer & Onboarding</h4><p>Get your offer letter and start building from day one.</p></div></div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section id="apply" style="padding-top:0">
+  <div class="section-header centered">
+    <div class="section-label">Apply Now</div>
+    <h2 class="section-title">Send your application</h2>
+    <p style="color:#94a3b8;font-size:0.9rem;margin-top:0.5rem">We review every application personally and reply within 3–5 working days.</p>
+  </div>
+  <div style="display:flex;justify-content:center">
+    <div class="apply-form">
+      <div class="form-row">
+        <div class="form-group"><label>Full Name *</label><input id="in-name" type="text" placeholder="Your full name"></div>
+        <div class="form-group"><label>Email *</label><input id="in-email" type="email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Phone Number</label><input id="in-phone" type="tel" placeholder="+91 98765 43210"></div>
+        <div class="form-group"><label>Role Applying For *</label>
+          <select id="in-role">
+            <option>Frontend Developer Intern</option>
+            <option>Backend Developer Intern</option>
+            <option>AI/ML Research Intern</option>
+            <option>Digital Marketing Intern</option>
+            <option>UI/UX Design Intern</option>
+            <option>Business Development Intern</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>College / University</label><input id="in-college" type="text" placeholder="Your college name"></div>
+        <div class="form-group"><label>Availability</label>
+          <select id="in-duration">
+            <option>2 months</option>
+            <option>3 months</option>
+            <option>6 months</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>LinkedIn / Portfolio / GitHub</label><input id="in-portfolio" type="url" placeholder="https://linkedin.com/in/yourname"></div>
+      <div class="form-group"><label>Why do you want to intern at MorGock.ai? *</label>
+        <textarea id="in-cover" rows="4" placeholder="Tell us about yourself and what you'd like to learn..."></textarea>
+      </div>
+      <button id="intern-submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.9rem;font-size:1rem;margin-top:0.5rem">
+        Submit Application 🚀
+      </button>
+      <p style="font-size:0.75rem;color:#475569;text-align:center;margin-top:0.75rem">
+        Applications go directly to Vishal Gautam's team · We reply within 3–5 days
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="font-family:Georgia,serif;font-size:1.4rem;font-weight:700;background:none;-webkit-text-fill-color:unset">
+        <span style="color:#4B8FFF">Mor</span><span style="color:#fff">Gock</span>
+      </div>
+      <p>AI solutions, web development & digital marketing for growing businesses.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Solutions</h5>
+      <a href="ai-for-banking.html">AI for Banking</a>
+      <a href="ai-for-healthcare.html">AI for Healthcare</a>
+      <a href="ai-for-retail.html">AI for Retail</a>
+      <a href="ai-for-it.html">AI for IT</a>
+      <a href="ai-for-hr.html">AI for HR</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="careers.html">Careers</a>
+      <a href="internships.html">Internships</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <a href="pricing.html">Pricing</a>
+      <a href="demo.html">Request Demo</a>
+      <a href="sign-in.html">Sign In</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MorGock.ai Inc. All rights reserved. Founded by Vishal Gautam.</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+<button id="back-top">↑</button>
+<script src="../js/main.js"></script>
+<script src="../js/forms.js"></script>
+<script>
+document.getElementById('intern-submit').addEventListener('click', function() {
+  var name     = document.getElementById('in-name').value.trim();
+  var email    = document.getElementById('in-email').value.trim();
+  var phone    = document.getElementById('in-phone').value.trim();
+  var role     = document.getElementById('in-role').value;
+  var college  = document.getElementById('in-college').value.trim();
+  var duration = document.getElementById('in-duration').value;
+  var portfolio= document.getElementById('in-portfolio').value.trim();
+  var cover    = document.getElementById('in-cover').value.trim();
+
+  if (!name)  { showToast('Please enter your full name.','warn'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email.','warn'); return; }
+  if (!cover) { showToast('Please tell us why you want to intern here.','warn'); return; }
+
+  submitToSheets(
+    { formType:'careers', name:name, email:email, phone:phone,
+      role:'[INTERN] '+role, linkedin:portfolio,
+      current:college, notice:duration, coverNote:cover },
+    document.getElementById('intern-submit'),
+    '🎉 Application received! We will reply within 3–5 days.'
+  );
+});
+</script>
+</body>
+</html>

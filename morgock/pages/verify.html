@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intern Verification — MorGock.ai</title>
+  <meta name="description" content="Verify your internship details at MorGock.ai" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    body { background: #05070f; }
+
+    .verify-wrap {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 5% 4rem;
+    }
+
+    .verify-card {
+      width: 100%; max-width: 480px;
+      background: #0d1526;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+    }
+
+    .brand-top {
+      text-align: center; margin-bottom: 2rem;
+    }
+    .brand-logo-circle {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: linear-gradient(135deg,#3b82f6,#6366f1);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.6rem;
+    }
+    .brand-top h2 {
+      font-family: 'Syne',sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      margin-bottom: 0.2rem;
+    }
+    .brand-top h2 span { color: #3b82f6; }
+    .brand-top p { font-size: 0.82rem; color: #64748b; }
+
+    .verify-title {
+      text-align: center; margin-bottom: 1.75rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .verify-title h3 {
+      font-family: 'Syne',sans-serif;
+      font-size: 1.2rem; font-weight: 800;
+      background: linear-gradient(135deg,#3b82f6,#6366f1);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 0.35rem;
+    }
+    .verify-title p { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
+
+    .field-label {
+      font-size: 0.78rem; font-weight: 600;
+      color: #94a3b8; margin-bottom: 0.4rem;
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .field-label .req { color: #3b82f6; }
+
+    .verify-input {
+      width: 100%; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 0.85rem 1rem;
+      font-size: 0.95rem; color: #f0f4ff;
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s;
+      outline: none; margin-bottom: 1.1rem;
+    }
+    .verify-input:focus { border-color: #3b82f6; }
+    .verify-input::placeholder { color: #475569; }
+
+    .verify-btn {
+      width: 100%; padding: 0.95rem;
+      background: linear-gradient(135deg,#3b82f6,#6366f1);
+      border: none; border-radius: 12px;
+      color: #fff; font-size: 1rem; font-weight: 600;
+      font-family: 'DM Sans',sans-serif;
+      cursor: pointer; display: flex; align-items: center;
+      justify-content: center; gap: 0.5rem;
+      transition: opacity 0.2s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+    .verify-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .verify-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    /* Result cards */
+    .result-box { display: none; border-radius: 16px; padding: 1.5rem; margin-top: 1.5rem; }
+    .result-box.valid {
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.3);
+    }
+    .result-box.invalid {
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.3);
+    }
+    .result-box.show { display: block; }
+
+    .result-header {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .result-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .valid .result-icon { background: rgba(34,197,94,0.15); }
+    .invalid .result-icon { background: rgba(239,68,68,0.15); }
+    .result-header h4 {
+      font-family: 'Syne',sans-serif;
+      font-size: 1rem; font-weight: 700;
+    }
+    .valid .result-header h4 { color: #86efac; }
+    .invalid .result-header h4 { color: #fca5a5; }
+
+    .result-row {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .lbl { color: #64748b; }
+    .result-row .val { color: #f0f4ff; font-weight: 500; text-align: right; }
+
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.25rem 0.75rem; border-radius: 100px;
+      font-size: 0.75rem; font-weight: 700;
+    }
+    .status-active { background: rgba(34,197,94,0.15); color: #86efac; }
+    .status-completed { background: rgba(59,130,246,0.15); color: #93c5fd; }
+    .status-pending { background: rgba(245,158,11,0.15); color: #fcd34d; }
+
+    .support-text {
+      text-align: center; margin-top: 1.5rem;
+      font-size: 0.78rem; color: #475569;
+    }
+    .support-text a { color: #3b82f6; }
+
+    @media(max-width:480px){
+      .verify-card { padding: 1.75rem 1.25rem; border-radius: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <span style="color:#4B8FFF !important;font-family:Georgia,serif;font-weight:700">Mor</span><span style="color:#ffffff !important;font-family:Georgia,serif;font-weight:700">Gock</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="internships.html">Internships</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="sign-in.html" class="btn btn-ghost">Sign In</a>
+    <a href="demo.html" class="btn btn-primary">Request Demo</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="verify-wrap">
+  <div class="verify-card">
+
+    <!-- Brand -->
+    <div class="brand-top">
+      <div class="brand-logo-circle">⚡</div>
+      <h2><span>Mor</span>Gock.ai</h2>
+      <p>Empowering Interns, Empowering Future</p>
+    </div>
+
+    <!-- Title -->
+    <div class="verify-title">
+      <h3>Verify Your Internship</h3>
+      <p>Enter your Unique ID and joining date to verify your internship details and view your record.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="field-label"><span class="req">●</span> Unique Intern ID *</div>
+    <input class="verify-input" id="v-uid" type="text" placeholder="e.g. MGK-2026-001" maxlength="20">
+
+    <div class="field-label"><span class="req">●</span> Joining Date *</div>
+    <input class="verify-input" id="v-date" type="date">
+
+    <div class="field-label"><span class="req">●</span> Registered Email *</div>
+    <input class="verify-input" id="v-email" type="email" placeholder="your.email@example.com">
+
+    <button class="verify-btn" id="verify-btn" onclick="verifyIntern()">
+      <span id="btn-text">Verify Internship Details →</span>
+    </button>
+
+    <!-- VALID RESULT -->
+    <div class="result-box valid" id="result-valid">
+      <div class="result-header">
+        <div class="result-icon">✅</div>
+        <div>
+          <h4>Verification Successful</h4>
+          <p style="font-size:0.78rem;color:#64748b">Your internship record is valid</p>
+        </div>
+      </div>
+      <div class="result-row"><span class="lbl">Intern Name</span><span class="val" id="r-name">—</span></div>
+      <div class="result-row"><span class="lbl">Intern ID</span><span class="val" id="r-uid">—</span></div>
+      <div class="result-row"><span class="lbl">Role</span><span class="val" id="r-role">—</span></div>
+      <div class="result-row"><span class="lbl">Department</span><span class="val" id="r-dept">—</span></div>
+      <div class="result-row"><span class="lbl">Duration</span><span class="val" id="r-duration">—</span></div>
+      <div class="result-row"><span class="lbl">Joining Date</span><span class="val" id="r-join">—</span></div>
+      <div class="result-row"><span class="lbl">End Date</span><span class="val" id="r-end">—</span></div>
+      <div class="result-row"><span class="lbl">Status</span><span class="val" id="r-status">—</span></div>
+    </div>
+
+    <!-- INVALID RESULT -->
+    <div class="result-box invalid" id="result-invalid">
+      <div class="result-header">
+        <div class="result-icon">❌</div>
+        <div>
+          <h4>Verification Failed</h4>
+          <p style="font-size:0.78rem;color:#64748b">No matching record found</p>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:#94a3b8;line-height:1.6">
+        The details you entered do not match any intern record. Please check your Unique ID, joining date and email, then try again.<br><br>
+        If you believe this is an error, contact us at <a href="mailto:morgock@gmail.com" style="color:#3b82f6">morgock@gmail.com</a>
+      </p>
+    </div>
+
+    <p class="support-text">
+      Having trouble? <a href="mailto:morgock@gmail.com">Contact our support team</a>
+    </p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom" style="text-align:center;padding:1.5rem 5%">
+    <span>© 2026 MorGock.ai Inc. All rights reserved. Founded by Vishal Gautam.</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+// ── CONFIG ──
+// Paste your Apps Script URL here after deploying
+var VERIFY_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiS1vMFD6s7rixcYbss167idad7rocIVNMmut6yhK790uesvsfCtOPUltO6W3RG1St/exec";
+
+function verifyIntern() {
+  var uid   = document.getElementById('v-uid').value.trim().toUpperCase();
+  var date  = document.getElementById('v-date').value;
+  var email = document.getElementById('v-email').value.trim().toLowerCase();
+
+  // Hide previous results
+  document.getElementById('result-valid').classList.remove('show');
+  document.getElementById('result-invalid').classList.remove('show');
+
+  if (!uid)   { alert('Please enter your Unique Intern ID.'); return; }
+  if (!date)  { alert('Please enter your joining date.'); return; }
+  if (!email) { alert('Please enter your registered email.'); return; }
+
+  var btn = document.getElementById('verify-btn');
+  var txt = document.getElementById('btn-text');
+  btn.disabled = true;
+  txt.textContent = 'Verifying...';
+
+  fetch(VERIFY_SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify({ formType: 'verify', uid: uid, date: date, email: email })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data) {
+    btn.disabled = false;
+    txt.textContent = 'Verify Internship Details →';
+
+    if (data.status === 'found') {
+      var d = data.intern;
+      document.getElementById('r-name').textContent     = d.name     || '—';
+      document.getElementById('r-uid').textContent      = d.uid      || '—';
+      document.getElementById('r-role').textContent     = d.role     || '—';
+      document.getElementById('r-dept').textContent     = d.dept     || '—';
+      document.getElementById('r-duration').textContent = d.duration || '—';
+      document.getElementById('r-join').textContent     = d.joinDate || '—';
+      document.getElementById('r-end').textContent      = d.endDate  || '—';
+
+      var statusEl = document.getElementById('r-status');
+      var s = (d.status || 'Active').toLowerCase();
+      var cls = s === 'active' ? 'status-active' : s === 'completed' ? 'status-completed' : 'status-pending';
+      statusEl.innerHTML = '<span class="status-badge '+cls+'">● '+(d.status||'Active')+'</span>';
+
+      document.getElementById('result-valid').classList.add('show');
+    } else {
+      document.getElementById('result-invalid').classList.add('show');
+    }
+  })
+  .catch(function(err) {
+    btn.disabled = false;
+    txt.textContent = 'Verify Internship Details →';
+    alert('Connection error. Please try again.');
+  });
+}
+
+// Allow Enter key to submit
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Enter') verifyIntern();
+});
+</script>
+</body>
+</html>
